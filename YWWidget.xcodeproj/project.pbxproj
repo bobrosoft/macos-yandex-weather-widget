@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C0F1C482A8929570079130A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F1C472A8929570079130A /* Utils.swift */; };
 		4C2791522A87E9BF00A40428 /* YWWidgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2791512A87E9BF00A40428 /* YWWidgetApp.swift */; };
 		4C2791542A87E9BF00A40428 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2791532A87E9BF00A40428 /* ContentView.swift */; };
 		4C2791562A87E9C500A40428 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C2791552A87E9C500A40428 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4C0F1C472A8929570079130A /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		4C27914E2A87E9BF00A40428 /* YWWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YWWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C2791512A87E9BF00A40428 /* YWWidgetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YWWidgetApp.swift; sourceTree = "<group>"; };
 		4C2791532A87E9BF00A40428 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				4C27917E2A87F05200A40428 /* WeatherWidget.swift */,
 				4C2791902A8813D200A40428 /* WeatherWidgetEntryView.swift */,
 				4C27918E2A880B1F00A40428 /* Provider.swift */,
+				4C0F1C472A8929570079130A /* Utils.swift */,
 				4C2791802A87F05200A40428 /* WeatherWidget.intentdefinition */,
 				4C2791812A87F05400A40428 /* Assets.xcassets */,
 				4C2791832A87F05400A40428 /* Info.plist */,
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C0F1C482A8929570079130A /* Utils.swift in Sources */,
 				4C2791912A8813D200A40428 /* WeatherWidgetEntryView.swift in Sources */,
 				4C27917F2A87F05200A40428 /* WeatherWidget.swift in Sources */,
 				4C27918F2A880B1F00A40428 /* Provider.swift in Sources */,
