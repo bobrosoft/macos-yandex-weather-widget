@@ -59,8 +59,17 @@ struct WeatherWidgetEntryView : View {
     }
   }
   
+  var conditionText: String {
+    guard let condition = entry.weather.condition else {
+      return "⏳"
+    }
+    
+    return (isNight && (iconsSourceNight[condition] != nil) ? iconsSourceNight[condition]! : iconsSourceDay[condition] ?? condition)
+  }
+  
   var body: some View {
-    let sign = entry.temperature < 0 ? "—" : "+"
+    let weather = entry.weather
+    let sign = (weather.temperature ?? 0) < 0 ? "—" : "+"
     
     let colors: [Color] = isNight ? [Color(hex: "#091D6A"), Color(hex: "#143791")] : (isEvening ? [Color(hex: "#3C1151"), Color(hex: "#863265"), Color(hex: "#D1968D")] : [Color(hex: "#3478E5"), Color(hex: "#8CD2FA")])
     let backgroundGradient = LinearGradient(gradient: Gradient(colors: colors), startPoint: .top, endPoint: .bottom)
@@ -75,8 +84,8 @@ struct WeatherWidgetEntryView : View {
       }
       
       VStack(alignment: .center, spacing: 5) {
-        Text(isNight && (iconsSourceNight[entry.condition] != nil) ? iconsSourceNight[entry.condition]! : iconsSourceDay[entry.condition] ?? entry.condition).font(.system(size: 80))
-        Text(sign + String(entry.temperature) + "°C").font(.system(size: 30, weight:
+        Text(conditionText).font(.system(size: 80))
+        Text((weather.temperature != nil ? sign + String(weather.temperature!) + "°C" : "???")).font(.system(size: 30, weight:
             .medium)).colorInvert()
       }
     }
@@ -85,14 +94,21 @@ struct WeatherWidgetEntryView : View {
 
 struct WeatherWidgetEntryView_Previews: PreviewProvider {
   static var previews: some View {
-    WeatherWidgetEntryView(entry: WeatherEntry(date: "2015-04-01 10:42:00".toLocalDate()!, temperature: 22, condition: "clear", configuration: ConfigurationIntent()))
+    WeatherWidgetEntryView(entry: WeatherEntry(date: "2015-04-01 10:42:00".toLocalDate()!, configuration: ConfigurationIntent(), weather: WeatherRecord(temperature: 18, condition: "clear")))
       .previewContext(WidgetPreviewContext(family: .systemSmall))
+      .previewDisplayName("Day")
     
-    WeatherWidgetEntryView(entry: WeatherEntry(date: "2015-04-01 17:42:00".toLocalDate()!, temperature: 19, condition: "rain", configuration: ConfigurationIntent()))
+    WeatherWidgetEntryView(entry: WeatherEntry(date: "2015-04-01 17:42:00".toLocalDate()!, configuration: ConfigurationIntent(), weather: WeatherRecord(temperature: 19, condition: "rain")))
       .previewContext(WidgetPreviewContext(family: .systemSmall))
+      .previewDisplayName("Evening")
     
-    WeatherWidgetEntryView(entry: WeatherEntry(date: "2015-04-01 23:42:00".toLocalDate()!, temperature: 16, condition: "clear", configuration: ConfigurationIntent()))
+    WeatherWidgetEntryView(entry: WeatherEntry(date: "2015-04-01 23:42:00".toLocalDate()!, configuration: ConfigurationIntent(), weather: WeatherRecord(temperature: 16, condition: "fog")))
       .previewContext(WidgetPreviewContext(family: .systemSmall))
+      .previewDisplayName("Night")
+    
+    WeatherWidgetEntryView(entry: WeatherEntry(date: "2015-04-01 10:42:00".toLocalDate()!, configuration: ConfigurationIntent(), weather: WeatherRecord(temperature: nil, condition: nil)))
+      .previewContext(WidgetPreviewContext(family: .systemSmall))
+      .previewDisplayName("No data")
   }
 }
 

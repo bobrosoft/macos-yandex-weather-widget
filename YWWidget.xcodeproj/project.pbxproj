@@ -21,6 +21,7 @@
 		4C2791892A87F05400A40428 /* WeatherWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4C27917A2A87F05200A40428 /* WeatherWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4C27918F2A880B1F00A40428 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C27918E2A880B1F00A40428 /* Provider.swift */; };
 		4C2791912A8813D200A40428 /* WeatherWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2791902A8813D200A40428 /* WeatherWidgetEntryView.swift */; };
+		4C8E80822A8C0E8300E105ED /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8E80812A8C0E8300E105ED /* WeatherService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		4C2791842A87F05400A40428 /* WeatherWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeatherWidget.entitlements; sourceTree = "<group>"; };
 		4C27918E2A880B1F00A40428 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		4C2791902A8813D200A40428 /* WeatherWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherWidgetEntryView.swift; sourceTree = "<group>"; };
+		4C8E80812A8C0E8300E105ED /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				4C27917E2A87F05200A40428 /* WeatherWidget.swift */,
 				4C2791902A8813D200A40428 /* WeatherWidgetEntryView.swift */,
 				4C27918E2A880B1F00A40428 /* Provider.swift */,
+				4C8E80812A8C0E8300E105ED /* WeatherService.swift */,
 				4C0F1C472A8929570079130A /* Utils.swift */,
 				4C2791802A87F05200A40428 /* WeatherWidget.intentdefinition */,
 				4C2791812A87F05400A40428 /* Assets.xcassets */,
@@ -265,6 +268,7 @@
 				4C2791912A8813D200A40428 /* WeatherWidgetEntryView.swift in Sources */,
 				4C27917F2A87F05200A40428 /* WeatherWidget.swift in Sources */,
 				4C27918F2A880B1F00A40428 /* Provider.swift in Sources */,
+				4C8E80822A8C0E8300E105ED /* WeatherService.swift in Sources */,
 				4C2791852A87F05400A40428 /* WeatherWidget.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,6 +412,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -436,6 +441,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

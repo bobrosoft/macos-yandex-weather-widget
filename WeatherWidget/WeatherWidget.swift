@@ -9,12 +9,14 @@ import WidgetKit
 import SwiftUI
 import Intents
 
+let weatherService = WeatherService();
+
 @main
 struct WeatherWidget: Widget {
   let kind: String = "WeatherWidget"
   
   var body: some WidgetConfiguration {
-    IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
+    IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider(weatherService: weatherService)) { entry in
       WeatherWidgetEntryView(entry: entry)
     }
     .configurationDisplayName("Yandex Weather")
