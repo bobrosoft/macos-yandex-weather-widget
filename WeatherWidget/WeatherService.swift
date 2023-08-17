@@ -23,7 +23,7 @@ class WeatherService: NSObject, CLLocationManagerDelegate {
   }
   
   func locationManager(_: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    location = locations.last!
+    location = locations.last
   }
   
   func getLocation() -> CLLocation? {
@@ -61,7 +61,11 @@ class WeatherService: NSObject, CLLocationManagerDelegate {
   }
   
   func getWeatherUrl() -> String {
-    return "https://meteum.ai/?lang=en" // Yandex will try to determine your location by default
+    if let location = location {
+      return "https://meteum.ai/?lang=en&lat=\(location.coordinate.latitude)&lon=\(location.coordinate.longitude)"
+    } else {
+      return "https://meteum.ai/?lang=en" // Yandex will try to determine your location by default
+    }
   }
 }
 
