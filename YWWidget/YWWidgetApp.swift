@@ -11,7 +11,11 @@ import SwiftUI
 struct YWWidgetApp: App {
   var body: some Scene {
     WindowGroup {
-      ContentView()
+      ContentView().onOpenURL { url in
+        NSWorkspace.shared.open(url)
+        NSApplication.shared.window(withWindowNumber: 0)?.close()
+        NSApplication.shared.terminate(nil)
+      }
     }
   }
 }

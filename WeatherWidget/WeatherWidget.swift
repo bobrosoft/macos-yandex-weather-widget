@@ -18,6 +18,7 @@ struct WeatherWidget: Widget {
   var body: some WidgetConfiguration {
     IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider(weatherService: weatherService)) { entry in
       WeatherWidgetEntryView(entry: entry)
+        .widgetURL(URL(string: weatherService.getWeatherUrl()))
     }
     .configurationDisplayName("Yandex Weather")
     .description("Display current weather in your place.")
