@@ -83,10 +83,11 @@ struct WeatherWidgetEntryView : View {
         }
       }
       
-      VStack(alignment: .center, spacing: 5) {
+      VStack(alignment: .center, spacing: 0) {
         Text(conditionText).font(.system(size: 80))
         Text((weather.temperature != nil ? sign + String(weather.temperature!) + "°C" : "???")).font(.system(size: 30, weight:
             .medium)).colorInvert()
+        Spacer().frame(height: 4)
       }
     }
   }
@@ -102,7 +103,7 @@ struct WeatherWidgetEntryView_Previews: PreviewProvider {
       .previewContext(WidgetPreviewContext(family: .systemSmall))
       .previewDisplayName("Evening")
     
-    WeatherWidgetEntryView(entry: WeatherEntry(date: "2015-04-01 23:42:00".toLocalDate()!, configuration: ConfigurationIntent(), weather: WeatherRecord(temperature: 16, condition: "fog")))
+    WeatherWidgetEntryView(entry: WeatherEntry(date: "2015-04-01 23:42:00".toLocalDate()!, configuration: ConfigurationIntent(), weather: WeatherRecord(temperature: 16, condition: "overcast")))
       .previewContext(WidgetPreviewContext(family: .systemSmall))
       .previewDisplayName("Night")
     
