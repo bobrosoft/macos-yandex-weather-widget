@@ -71,6 +71,8 @@
 		4C7B265D2A8EB284002EF442 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		4C7B265F2A8EB4EB002EF442 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C8E80812A8C0E8300E105ED /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		4CCC3E782A92536600A0DE08 /* screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot.png; sourceTree = "<group>"; };
+		4CCC3E792A9253A600A0DE08 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,8 @@
 				4C2791502A87E9BF00A40428 /* YWWidget */,
 				4C27917D2A87F05200A40428 /* WeatherWidget */,
 				4C2791652A87EA4900A40428 /* Frameworks */,
+				4CCC3E782A92536600A0DE08 /* screenshot.png */,
+				4CCC3E792A9253A600A0DE08 /* README.md */,
 				4C27914F2A87E9BF00A40428 /* Products */,
 			);
 			sourceTree = "<group>";
