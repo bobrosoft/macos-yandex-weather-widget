@@ -1,8 +1,8 @@
 #  YWWidget - Yandex Weather Widget for macOS
 
-Missing Yandex Weather Widget for macOS 🌥.
+Missing Yandex Weather Widget for macOS 🌥
 
-![screenshot](./screenshot.png)
+<img src="screenshot.png" alt="drawing" width="400" />
 
 ### [💻 Download here 💻](https://github.com/bobrosoft/macos-yandex-weather-widget/releases)
 
