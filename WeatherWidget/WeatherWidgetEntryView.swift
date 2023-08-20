@@ -39,6 +39,7 @@ struct WeatherWidgetEntryView : View {
     Star(x: 190, y: 96, size: 2),
     Star(x: 230, y: 130, size: 1),
     Star(x: 113, y: 140, size: 1),
+    Star(x: 215, y: 120, size: 1),
   ]
   
   var hour: Int {
