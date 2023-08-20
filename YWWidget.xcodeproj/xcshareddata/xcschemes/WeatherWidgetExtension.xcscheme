@@ -57,8 +57,19 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "1"
+         BundleIdentifier = "com.apple.widgetkit.simulator"
+         RemotePath = "/System/Library/CoreServices/WidgetKit Simulator.app/Contents/MacOS/WidgetKit Simulator">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "4C2791792A87F05200A40428"
+            BuildableName = "WeatherWidgetExtension.appex"
+            BlueprintName = "WeatherWidgetExtension"
+            ReferencedContainer = "container:YWWidget.xcodeproj">
+         </BuildableReference>
+      </RemoteRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4C27914D2A87E9BF00A40428"
@@ -66,7 +77,7 @@
             BlueprintName = "YWWidget"
             ReferencedContainer = "container:YWWidget.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "_XCWidgetKind"
@@ -109,5 +120,23 @@
    <ArchiveAction
       buildConfiguration = "Release"
       revealArchiveInOrganizer = "YES">
+      <PostActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;cd &quot;${PROJECT_DIR}&quot;;&#10;agvtool bump&#10;">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "4C2791792A87F05200A40428"
+                     BuildableName = "WeatherWidgetExtension.appex"
+                     BlueprintName = "WeatherWidgetExtension"
+                     ReferencedContainer = "container:YWWidget.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
+            </ActionContent>
+         </ExecutionAction>
+      </PostActions>
    </ArchiveAction>
 </Scheme>
