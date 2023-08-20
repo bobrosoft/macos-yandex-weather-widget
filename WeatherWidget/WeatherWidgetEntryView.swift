@@ -72,7 +72,7 @@ struct WeatherWidgetEntryView : View {
     let weather = entry.weather
     let sign = (weather.temperature ?? 0) < 0 ? "—" : "+"
     
-    let colors: [Color] = isNight ? [Color(hex: "#091D6A"), Color(hex: "#143791")] : (isEvening ? [Color(hex: "#3C1151"), Color(hex: "#863265"), Color(hex: "#D1968D")] : [Color(hex: "#3478E5"), Color(hex: "#8CD2FA")])
+    let colors: [Color] = isNight ? [Color(hex: "#000b38"), Color(hex: "#143791")] : (isEvening ? [Color(hex: "#3C1151"), Color(hex: "#863265"), Color(hex: "#D1968D")] : [Color(hex: "#3478E5"), Color(hex: "#8CD2FA")])
     let backgroundGradient = LinearGradient(gradient: Gradient(colors: colors), startPoint: .top, endPoint: .bottom)
     
     ZStack {
