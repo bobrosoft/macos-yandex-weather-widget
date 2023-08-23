@@ -17,7 +17,7 @@ struct YWWidgetApp: App {
         NSWorkspace.shared.open(url)
         NSApplication.shared.window(withWindowNumber: 0)?.close()
         NSApplication.shared.terminate(nil)
-      }.frame(maxWidth: 300)
+      }.frame(minWidth: 300, maxWidth: 300, minHeight: 146)
     }
   }
 }
