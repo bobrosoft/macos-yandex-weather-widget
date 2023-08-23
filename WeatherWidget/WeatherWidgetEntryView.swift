@@ -50,13 +50,13 @@ struct WeatherWidgetEntryView : View {
   
   var isEvening: Bool {
     get {
-      return hour >= 17 && hour < 20
+      return hour >= 19 && hour < 22
     }
   }
   
   var isNight: Bool {
     get {
-      return hour >= 20 || hour < 7
+      return hour >= 22 || hour < 7
     }
   }
   
@@ -100,7 +100,7 @@ struct WeatherWidgetEntryView_Previews: PreviewProvider {
       .previewContext(WidgetPreviewContext(family: .systemSmall))
       .previewDisplayName("Day")
     
-    WeatherWidgetEntryView(entry: WeatherEntry(date: "2015-04-01 17:42:00".toLocalDate()!, configuration: ConfigurationIntent(), weather: WeatherRecord(temperature: 19, condition: "rain")))
+    WeatherWidgetEntryView(entry: WeatherEntry(date: "2015-04-01 19:12:00".toLocalDate()!, configuration: ConfigurationIntent(), weather: WeatherRecord(temperature: 19, condition: "rain")))
       .previewContext(WidgetPreviewContext(family: .systemSmall))
       .previewDisplayName("Evening")
     
