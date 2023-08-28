@@ -18,8 +18,8 @@ class WeatherService: NSObject, CLLocationManagerDelegate {
     
     manager = CLLocationManager()
     manager.delegate = self
-    manager.desiredAccuracy = kCLLocationAccuracyHundredMeters
-    manager.startUpdatingLocation()
+    manager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
+    manager.startMonitoringSignificantLocationChanges()
   }
   
   func locationManager(_: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
