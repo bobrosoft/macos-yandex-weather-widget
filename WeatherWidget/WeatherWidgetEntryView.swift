@@ -70,7 +70,7 @@ struct WeatherWidgetEntryView : View {
   
   var body: some View {
     let weather = entry.weather
-    let sign = (weather.temperature ?? 0) < 0 ? "—" : "+"
+    let sign = (weather.temperature ?? 0) < 0 ? "–" : "+"
     
     let colors: [Color] = isNight ? [Color(hex: "#000b38"), Color(hex: "#143791")] : (isEvening ? [Color(hex: "#3C1151"), Color(hex: "#863265"), Color(hex: "#D1968D")] : [Color(hex: "#3478E5"), Color(hex: "#8CD2FA")])
     let backgroundGradient = LinearGradient(gradient: Gradient(colors: colors), startPoint: .top, endPoint: .bottom)
@@ -86,7 +86,7 @@ struct WeatherWidgetEntryView : View {
       
       VStack(alignment: .center, spacing: 0) {
         Text(conditionText).font(.system(size: 80))
-        Text((weather.temperature != nil ? sign + String(weather.temperature!) + "°C" : "???")).font(.system(size: 30, weight:
+        Text((weather.temperature != nil ? sign + String(abs(weather.temperature!)) + "°C" : "???")).font(.system(size: 30, weight:
             .medium)).colorInvert()
         Spacer().frame(height: 4)
       }
