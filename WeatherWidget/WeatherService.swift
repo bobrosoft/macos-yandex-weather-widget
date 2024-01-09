@@ -45,14 +45,13 @@ class WeatherService: NSObject, CLLocationManagerDelegate {
       
       var matches: [[String]]
       var temperature: String
-      matches = response.matchingStrings(regex: "fact__temp.*?temp__value.*?>(.*?)<")
+      matches = response.matchingStrings(regex: "\"temperature\":([-\\d]*?),")
       temperature = (matches.first?.item(at: 1) ?? "")
-        .replacingOccurrences(of: "−", with: "-") // need to replace "long minus" with "short minus" for proper conversion
       
       var condition: String?
-//      matches = response.matchingStrings(regex: "\"condition\":\"(.*?)\"") // old parser
-      matches = response.matchingStrings(regex: "link__condition.*?>(.*?)<")
+      matches = response.matchingStrings(regex: "\"condition\":\"(.*?)\"")
       condition = matches.first?.item(at: 1)?.lowercased().replacingOccurrences(of: " ", with: "-")
+//      print(temperature, condition)
       
       let record = WeatherRecord(temperature: Int(temperature), condition: condition)
       completion(record)
