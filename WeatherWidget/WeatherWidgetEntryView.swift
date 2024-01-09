@@ -48,9 +48,17 @@ struct WeatherWidgetEntryView : View {
     }
   }
   
+  var isWinter: Bool {
+    get {
+      let month = Calendar.current.component(.month, from: entry.date)
+      
+      return month >= 11 || month <= 2
+    }
+  }
+  
   var isEvening: Bool {
     get {
-      return hour >= 19 && hour < 22
+      return hour >= (isWinter ? 17 : 19) && hour < 22
     }
   }
   
