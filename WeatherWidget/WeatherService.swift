@@ -50,7 +50,9 @@ class WeatherService: NSObject, CLLocationManagerDelegate {
       
       var condition: String?
       matches = response.matchingStrings(regex: "\"condition\":\"(.*?)\"")
-      condition = matches.first?.item(at: 1)?.lowercased().replacingOccurrences(of: " ", with: "-")
+      condition = matches.first?.item(at: 1)?.lowercased()
+        .replacingOccurrences(of: " ", with: "-")
+        .replacingOccurrences(of: "_", with: "-")
 //      print(temperature, condition)
       
       let record = WeatherRecord(temperature: Int(temperature), condition: condition)
